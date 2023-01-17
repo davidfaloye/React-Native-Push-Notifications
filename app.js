@@ -75,7 +75,7 @@ async function sendPushNotification(deviceToken) {
     data: { name:"Tobi",age:27 },
   };
 
-  await fetch('https://...fetcher.php', {
+  await fetch('https://...handler.php', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
