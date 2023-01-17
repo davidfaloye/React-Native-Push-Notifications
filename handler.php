@@ -3,6 +3,7 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $request_raw = file_get_contents('php://input');
     $request = json_decode($request_raw,true);
+    $deviceToken=$request['to'];
     $title=$request['title'];
     $body=$request['body'];
     $data=$request['data'];
@@ -10,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 try {
     $channelName = 'test';
-    $recipient= 'ExponentPushToken[L7hLDOF7fjNxWVNQ65zlbb]';
+    $recipient= $deviceToken;
     
     // You can quickly bootup an expo instance
     $expo = \ExponentPhpSDK\Expo::normalSetup();
