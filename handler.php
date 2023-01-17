@@ -1,5 +1,5 @@
 <?php
-
+//this is a server file that receives and relays the message as a push notification to the device in which the app is installed
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $request_raw = file_get_contents('php://input');
     $request = json_decode($request_raw,true);
